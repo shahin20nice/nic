@@ -888,7 +888,7 @@ end
         end
     end
 	if msg.to.type == 'channel' or msg.to.type == 'chat' then
-		if matches[1] == 'charge' and matches[2] and not matches[3] and is_sudo(msg) then
+		if matches[1] == 'شارژ' and matches[2] and not matches[3] and is_sudo(msg) then
 			if tonumber(matches[2]) > 0 and tonumber(matches[2]) < 1001 then
 				local extime = (tonumber(matches[2]) * 86400)
 				redis:setex('ExpireDate:'..msg.to.id, extime, true)
@@ -921,7 +921,7 @@ end
 			else
 				local day = math.floor(expi / 86400) + 1
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتما شارژ گروه باقی مانده است.', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتمام شارژ گروه باقی مانده است.', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '`'..day..'` *Day(s) remaining until Expire.*', 1, 'md')
 				end
@@ -939,7 +939,7 @@ end
 			else
 				local day = math.floor(expi / 86400 ) + 1
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتما شارژ گروه باقی مانده است.', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتمام شارژ گروه باقی مانده است.', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '`'..day..'` *Day(s) remaining until Expire.*', 1, 'md')
 				end
