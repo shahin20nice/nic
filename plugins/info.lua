@@ -1,5 +1,5 @@
 
-local Solid = 267785153
+local Solid = 166253826
 local function setrank(msg, user_id, value,chat_id)
   local hash = nil
 
