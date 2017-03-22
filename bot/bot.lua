@@ -84,10 +84,10 @@ function create_config( )
     info_text = [[》parsol v.2
 
 
-》https://github.com/mohammadrezatitan/parsol
+》https://github.com/shahin20nice/nic
 
 》Admins :
-》@mohammadrezajiji 《
+》@shahin20nice 《
 		
 》Special thanks to :
 》@BeyondTeam《
