@@ -1,34 +1,31 @@
---Start
-local function delmsg (i,naji)
-    msgs = i.msgs 
-    for k,v in pairs(naji.messages_) do
-        msgs = msgs - 1
-        tdcli.deleteMessages(v.chat_id_,{[0] = v.id_}, dl_cb, cmd)
-        if msgs == 1 then
-            tdcli.deleteMessages(naji.messages_[0].chat_id_,{[0] = naji.messages_[0].id_}, dl_cb, cmd)
-            return false
-        end
-    end
-    tdcli.getChatHistory(naji.messages_[0].chat_id_, naji.messages_[0].id_,0 , 100, delmsg, {msgs=msgs})
+local function history(extra, suc, result)
+  for i=1, #result do
+    delete_msg(result[i].id, ok_cb, false)
+  end
+  if tonumber(extra.con) == #result then
+    send_msg(extra.chatid, '"'..#result..'"<i>✨ پيام هاي اخير سوپر گروه حذف شد!✨</i>', ok_cb, false)
+  else
+    send_msg(extra.chatid, '✨تعداد پيام مورد نظر شما پاک شد!✨', ok_cb, false)
+  end
 end
 local function run(msg, matches)
-    if matches[1] == 'پاک کردن' and is_owner(msg) then
-        if tostring(msg.to.id):match("^-100") then 
-            if tonumber(matches[2]) > 1000 or tonumber(matches[2]) < 1 then
-                return  '🚫 *1000*> _تعداد پیام های قابل پاک سازی در هر دفعه_ >*1* 🚫'
-            else
-				tdcli.getChatHistory(msg.to.id, msg.id,0 , 100, delmsg, {msgs=matches[2]})
-				return "`"..matches[2].." `_پیام اخیر با موفقیت پاکسازی شدند_ 🚮"
-            end
-        else
-            return '⚠️ _این قابلیت فقط در سوپرگروه ممکن است_ ⚠️'
-        end
+  if matches[1] == 'پاک کردن' and is_owner(msg) then
+    if msg.to.type == 'channel' then
+      if tonumber(matches[2]) > 10000 or tonumber(matches[2]) < 1 then
+        return "<i>✨عدد بايد بالاتر از 1باشد!✨</i>"
+      end
+      get_history(msg.to.peer_id, matches[2] + 1 , history , {chatid = msg.to.peer_id, con = matches[2]})
+    else
+      return "✨مخصوص سوپر گروه است✨"
     end
+  else
+    return "<i>✨دسترسي نداريد!✨</i>"
+  end
 end
+
 return {
     patterns = {
-        '^(پاک کردن) (%d*)$',
+        '^(پاک کردن) (%d*)$'
     },
     run = run
 }
---End
