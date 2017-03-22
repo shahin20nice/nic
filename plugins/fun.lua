@@ -232,7 +232,7 @@ if matches[1] == 'ویس' then
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
   local file = download_to_file(url,'anti_spam_nice.mp3')
- 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@titantims', dl_cb, nil)
+ 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@anti_spam_nice', dl_cb, nil)
    end
 end
 
