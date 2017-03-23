@@ -2823,7 +2823,7 @@ if matches[1] == 'لینک جدید' and is_mod(msg) then
   return "قوانین گروه ثبت شد✅"
    end
   end
-  if matches[1] == "درباره" then
+  if matches[1] == "قوانین" then
  if not data[tostring(chat)]['rules'] then
    if not lang then
      rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n@titantims"
