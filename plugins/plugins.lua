@@ -20,7 +20,7 @@ local function plugin_exists( name )
 end
 
 local function list_all_plugins(only_enabled, msg)
-  local tmp = '\n\n@anti_spam_nice'
+  local tmp = '\n\n@Nice20Team'
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
@@ -66,7 +66,7 @@ local function list_plugins(only_enabled, msg)
      -- text = text..v..'  '..status..'\n'
     end
   end
-  text = "\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n@titantims"
+  text = "\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n@Nice20Team"
   tdcli.sendMessage(msg.to.id, msg.id_, 1, text, 1, 'md')
 end
 
@@ -216,10 +216,10 @@ return {
       moderator = {
           "!pl - [plugin] chat : disable plugin only this chat.",
           "!pl + [plugin] chat : enable plugin only this chat.",
-          },
+          },Nice20Team
       sudo = {
           "!plist : list all plugins.",
-          "!pl + [plugin] : enable plugin.",
+          "!pl + [plugiNice20Teamn] : enable plugin.",
           "!pl - [plugin] : disable plugin.",
           "!pl * : reloads all plugins." },
           },
@@ -239,4 +239,4 @@ return {
 
 end
 
---@titantims
+--@Nice20Team
