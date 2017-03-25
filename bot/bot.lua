@@ -72,7 +72,8 @@ function create_config( )
 		"info",
 		"del",
 		"nerkh",
-		"pic",
+               	"pic",
+                "cleanbot",
 		"ping",
 		"time1",
 		"write"	
@@ -87,7 +88,7 @@ function create_config( )
 》https://github.com/shahin20nice/nic
 
 》Admins :
-》@shahin20nice 《
+》@Nice20Admin 《
 		
 》Special thanks to :
 》@BeyondTeam《
