@@ -3,7 +3,7 @@
 
 local function run_bash(str)
     local cmd = io.popen(str)
-    local result = is_mod:read('*all')
+    local result = cmd:read('*all')
     return result
 end
 --------------------------------
