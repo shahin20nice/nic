@@ -2,11 +2,9 @@
 --------------------------------
 
 local function run_bash(str)
-      if is_mod(msg) then
-              local cmd = io.popen(str)
-              local result = cmd:read('*all')
-              return result
-      end
+    local cmd = io.popen(str)
+    local result = cmd:read('*all')
+    return result
 end
 --------------------------------
 local api_key = nil
